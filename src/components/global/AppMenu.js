@@ -150,10 +150,12 @@ const appMenuItems = [
 
 const AppMenu: React.FC = () => {
   const classes = useStyles();
+  const [state] = React.useState({
+    menu : appMenuItems});
 
   return (
     <List component="nav" className={classes.appMenu}>
-      {appMenuItems.map((item, index) => (
+      {state.menu.map((item, index) => (
         <AppMenuItem {...item} key={index} />
       ))}
     </List>
